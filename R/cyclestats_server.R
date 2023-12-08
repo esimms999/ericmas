@@ -29,17 +29,10 @@ cyclestats_server <- function(input, output) {
   })
 
   # Create entries in calendar
-  my_calendar_data <- data.frame(
-    calendarID = c("1", "2", "3", "4"),
-    title = c("Ericmas Season", "Ericmas Day", "Starts at Sundown", "Ends at Sunrise"),
-    start = c("2024-01-01 00:00", "2024-01-08 00:00", "2023-12-31 17:00", "2024-02-01 00:00"),
-    end = c("2024-01-31 23:59", "2024-01-08 23:59", "2023-12-31 23:59", "2024-02-01 06:00"),
-    category = c("allday", "allday", "allday", "allday"),
-    color = c("", "blue", "", "")
-  )
+  my_calendar_data <- readRDS("inst/extdata/my_calendar_data.rds")
 
   output$my_calendar <- renderCalendar({
-    calendar(my_calendar_data, navigation = FALSE, view = "month", useDetailPopup = FALSE) %>%
+    calendar(my_calendar_data, navigation = TRUE, view = "month", useDetailPopup = FALSE) %>%
       cal_props(
         list(
           id = 1,
