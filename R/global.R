@@ -1,11 +1,11 @@
-#' Prepare data for use within the app
+ #' Prepare data for use within the app
 #'
 #' @return
 #' @export
 #' @import magrittr
 #' @examples
 
-cyclestats_init <- function() {
+ericmas_init <- function() {
   # The activities.csv file has been downloaded from Strava and placed in /inst/extdata
   # Keep only ride info, convert from km to miles, keep only variables which will be used n the app.
   activities <<- readr::read_csv("inst/extdata/activities.csv",
@@ -49,6 +49,6 @@ cyclestats_init <- function() {
   dplyr::arrange(activity_year_month)
 }
 
-cyclestats_init()
+ericmas_init()
 
 

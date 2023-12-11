@@ -8,7 +8,7 @@
       tryCatch(
         expr = {
           # load package
-          library(cyclestats)
+          library(ericmas)
         },
         error = function(e) {
           # load R/ folder
@@ -21,5 +21,5 @@
       }
 
     # create shiny object
-    cyclestats::cyclestatsApp()
+    ericmas::ericmasApp()
   })

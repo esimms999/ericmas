@@ -1,12 +1,12 @@
-Package: cyclestats
+Package: ericmas
 Title: Analysis of Cycling Data
 Version: 0.0.0.9000
 Authors@R: 
     person("E.", "Simms", , "esimms@yahoo.com", role = c("aut", "cre"))
 Description: PKG_DESC.
 License: MIT + file LICENSE
-URL: https://github.com/esimms999/cyclestats
-BugReports: https://github.com/esimms999/cyclestats/issues
+URL: https://github.com/esimms999/ericmas
+BugReports: https://github.com/esimms999/ericmas/issues
 Imports: 
     bsicons,
     bslib,
