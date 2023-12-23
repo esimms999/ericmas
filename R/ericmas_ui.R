@@ -6,9 +6,12 @@
 
 ericmas_ui <- function() {
   page_sidebar(
-    title = "Ericmas Calculator v0.5",
+    title = "Ericmas Calculator v0.6",
     bg = "lightblue",
     open = NA,
+    fillable = FALSE,
+    fluid = FALSE,
+    collapsible = FALSE,
 
     sidebar = selectInput(
       inputId = "selected_year",
