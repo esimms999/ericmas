@@ -2,10 +2,10 @@
 % Please edit documentation in R/ericmas_ui.R
 \name{ericmas_ui}
 \alias{ericmas_ui}
-\title{Title}
+\title{Define user interface}
 \usage{
 ericmas_ui()
 }
 \description{
-Title
+Define user interface
 }

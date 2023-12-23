@@ -1,57 +1,50 @@
-#' Title
+#' Define user interface
 #'
-#' @return
 #' @export
 #' @import bslib
 #' @import bsicons
-#' @examples
 
 ericmas_ui <- function() {
   page_sidebar(
-    title = "Ericmas Calculator",
+    title = "Ericmas Calculator v0.5",
     bg = "lightblue",
+    open = NA,
 
     sidebar = selectInput(
       inputId = "selected_year",
       label = "Select Year:",
       choices = available_years,
+      selected = "2024",
       multiple = FALSE
     ),
 
     navset_card_pill(
       title = "",
-      nav_panel("Calendar",
+      nav_panel("Calculator",
                 layout_columns(
                   fill = FALSE,
                   value_box(
-                    title = "Selected year",
-                    #value = scales::unit_format(unit = "mm")(means[[2]]),
-                    value = textOutput("number_of_rides"),
-                    showcase = bsicons::bs_icon("bicycle")
+                    title = "Year",
+                    value = textOutput("year_selected"),
+                    color = "blue",                       # Does not seem to work :(
+                    showcase = bsicons::bs_icon("calendar")
                   ),
                   value_box(
-                    title = "Days of Ericmas",
-                    value = textOutput("number_of_miles"),
-                    showcase = bsicons::bs_icon("speedometer2")
+                    title = "Starts at sundown",
+                    value = textOutput("ericmas_start"),
+                    showcase = bsicons::bs_icon("sunset")
                   ),
                   value_box(
-                    title = "Dumb",
-                    #value = scales::unit_format(unit = "mm")(means[[2]]),
-                    value = textOutput("number_of_rides2"),
-                    showcase = bsicons::bs_icon("bicycle")
+                    title = "Ends at sunrise",
+                    value = textOutput("ericmas_end"),
+                    showcase = bsicons::bs_icon("sunrise")
                   ),
                   value_box(
-                    title = "Lazy",
-                    value = textOutput("number_of_rides3"),
-                    showcase = bsicons::bs_icon("speedometer2")
-                  ),
-                  value_box(
-                    title = "Understand",
-                    value = textOutput("number_of_rides4"),
-                    showcase = bsicons::bs_icon("speedometer2")
+                    title = "Gifts required",
+                    value = textOutput("ericmas_gifts"),
+                    showcase = bsicons::bs_icon("gift")
+                    ),
                   )
-                ),
-                toastui::calendarOutput("my_calendar", width = "100%", height = "600px")
                 ),
       nav_panel("About", uiOutput("about_text"))
     ),

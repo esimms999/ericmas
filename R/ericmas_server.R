@@ -2,64 +2,47 @@
 
 #' Title
 #'
-#' @param input
-#' @param output
-#'
-#' @return
+#' @importFrom dplyr filter
+#' @importFrom htmltools includeMarkdown
+#' @importFrom shinyjs hide show
 #' @export
-#' @import toastui
-#' @examples
 
 ericmas_server <- function(input, output) {
 
-  # value_box for selected year
-  number_of_rides <- reactive({
-    as.character(dplyr::count(activities_selected()))
-  })
-
-  # value_box for number of days
-  number_of_miles <- reactive({
-    as.character(sum(activities_selected()$activity_distance))
-  })
-
   # Filter by selected year
-  activities_selected <- reactive({
-    activities |>
-      dplyr::filter(activity_year %in% input$selected_year)
+  selected_year <- reactive({
+    ericmas_data |>
+      dplyr::filter(year %in% input$selected_year)
   })
 
-  # Create entries in calendar
-  my_calendar_data <- readRDS("inst/extdata/my_calendar_data.rds")
-
-  output$my_calendar <- renderCalendar({
-    calendar(my_calendar_data, navigation = TRUE, view = "month", useDetailPopup = FALSE) %>%
-      cal_props(
-        list(
-          id = 1,
-          name = "PERSO",
-          color = "white",
-          bgColor = "firebrick",
-          borderColor = "firebrick"
-        ),
-        list(
-          id = 2,
-          name = "WORK",
-          color = "white",
-          bgColor = "forestgreen",
-          borderColor = "forestgreen"
-        )
-      )
+  # value_box for selected year
+  year_selected <- reactive({
+    selected_year()$year
   })
+
+  # value_box for start date
+  ericmas_start <- reactive({
+    as.character(selected_year()$start_date)
+  })
+
+  # value_box for end date
+  ericmas_end <- reactive({
+    as.character(selected_year()$end_date)
+  })
+
+  # value_box for number of gifts
+  ericmas_gifts <- reactive({
+    as.character(selected_year()$number_of_days)
+  })
+
+  output$year_selected <- renderText(year_selected())
+  output$ericmas_start <- renderText(ericmas_start())
+  output$ericmas_end <- renderText(ericmas_end())
+  output$ericmas_gifts <- renderText(ericmas_gifts())
 
   output$about_text <- renderUI({
-    # HTML(markdown::markdownToHTML('inst/www/about.Rmd', fragment.only = TRUE))
     htmltools::includeMarkdown(path = 'inst/www/about.Rmd')
     })
-  output$number_of_rides <- renderText(number_of_rides())
-  output$number_of_rides2 <- renderText(number_of_rides())
-  output$number_of_rides3 <- renderText(number_of_rides())
-  output$number_of_rides4 <- renderText(number_of_rides())
-  output$number_of_miles <- renderText(number_of_miles())
 }
 
 

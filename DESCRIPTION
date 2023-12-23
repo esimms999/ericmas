@@ -9,13 +9,15 @@ URL: https://github.com/esimms999/ericmas
 BugReports: https://github.com/esimms999/ericmas/issues
 Imports: 
     bsicons,
-    bslib,
+    bslib (>= 0.6.1),
     dplyr,
+    htmltools,
     lubridate,
     magrittr,
     markdown,
     shiny,
-    stringr
+    stringr,
+    tibble
 Suggests: 
     knitr,
     rmarkdown,

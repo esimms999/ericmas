@@ -6,9 +6,6 @@
 \usage{
 ericmas_server(input, output)
 }
-\arguments{
-\item{output}{}
-}
 \description{
 Title
 }
