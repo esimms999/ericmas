@@ -3,7 +3,7 @@
 #' Title
 #'
 #' @importFrom dplyr filter
-#' @importFrom htmltools includeMarkdown
+# #' @importFrom htmltools includeMarkdown includeHTML
 #' @importFrom shinyjs hide show
 #' @export
 
@@ -40,9 +40,10 @@ ericmas_server <- function(input, output) {
   output$ericmas_end <- renderText(ericmas_end())
   output$ericmas_gifts <- renderText(ericmas_gifts())
 
-  output$about_text <- renderUI({
-    htmltools::includeMarkdown(path = 'inst/www/about.Rmd')
-    })
+  #output$about_text <- renderUI({
+    #htmltools::includeHTML(path = 'inst/www/about.html')
+    #htmltools::includeMarkdown(path = 'inst/www/about.Rmd')
+   # })
 }
 
 
