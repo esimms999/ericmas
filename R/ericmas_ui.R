@@ -3,10 +3,11 @@
 #' @export
 #' @import bslib
 #' @import bsicons
+#' @importFrom htmltools includeHTML
 
 ericmas_ui <- function() {
   page_sidebar(
-    title = "Ericmas Calculator v0.6",
+    title = "Ericmas Calculator v0.7",
     bg = "lightblue",
     open = "closed",
     fillable = FALSE,
@@ -49,7 +50,7 @@ ericmas_ui <- function() {
                     ),
                   )
                 ),
-      nav_panel("About", uiOutput("about_text"))
+      nav_panel("About", htmltools::includeHTML(path = 'inst/www/about.html'))
     ),
   )
 }
