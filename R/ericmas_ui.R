@@ -8,7 +8,7 @@
 
 ericmas_ui <- function() {
   page_sidebar(
-    title = "Ericmas Calculator v0.7",
+    title = "Ericmas Calculator v0.8",
     bg = "lightblue",
     open = "closed",
     fillable = FALSE,
