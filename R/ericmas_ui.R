@@ -3,6 +3,7 @@
 #' @export
 #' @import bslib
 #' @import bsicons
+#' @import shiny
 #' @importFrom htmltools includeHTML
 
 ericmas_ui <- function() {

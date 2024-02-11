@@ -16,6 +16,7 @@ Imports:
     magrittr,
     markdown,
     shiny,
+    shinyjs,
     stringr,
     tibble
 Suggests: 
