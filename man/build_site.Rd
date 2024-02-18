@@ -48,6 +48,3 @@ Creates pkgdown site with the yam.expr.eval option set to TRUE
 \description{
 Build pkgdown site with yaml.expr.eval = TRUE
 }
-\examples{
-build_site()
-}
