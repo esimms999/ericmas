@@ -13,7 +13,6 @@ Imports:
     dplyr,
     htmltools,
     lubridate,
-    magrittr,
     markdown,
     shiny,
     shinyjs,
