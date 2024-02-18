@@ -5,7 +5,6 @@
 #' @importFrom dplyr filter
 # #' @importFrom htmltools includeMarkdown includeHTML
 #' @importFrom shinyjs hide show
-#' @export
 
 ericmas_server <- function(input, output) {
 

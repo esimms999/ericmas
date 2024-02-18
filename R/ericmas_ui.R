@@ -1,6 +1,4 @@
 #' Define user interface
-#'
-#' @export
 #' @import bslib
 #' @import bsicons
 #' @import shiny
