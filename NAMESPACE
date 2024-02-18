@@ -2,8 +2,6 @@
 
 export(build_site)
 export(ericmasApp)
-export(ericmas_server)
-export(ericmas_ui)
 import(bsicons)
 import(bslib)
 import(shiny)
