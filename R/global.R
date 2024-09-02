@@ -4,6 +4,11 @@
 #' @importFrom lubridate ymd
 #' @importFrom tibble tribble
 
+  #markdown::mark_html("inst/www/about.md")
+  # about_text <- HTML(markdown::markdownToHTML('inst/www/about.md',
+  #                                             fragment.only = TRUE)
+  #                    )
+
   initial_records <- tibble::tribble(
     ~year, ~start,       ~end,
     "2024",  "2023-12-31", "2024-02-01",
