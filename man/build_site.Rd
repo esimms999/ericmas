@@ -13,8 +13,8 @@ build_site(...)
     \item{\code{pkg}}{Path to package.}
     \item{\code{examples}}{Run examples?}
     \item{\code{run_dont_run}}{Run examples that are surrounded in \\dontrun?}
-    \item{\code{seed}}{Seed used to initialize so that random examples are
-reproducible.}
+    \item{\code{seed}}{Seed used to initialize random number generation in order to
+make article output reproducible. An integer scalar or \code{NULL} for no seed.}
     \item{\code{lazy}}{If \code{TRUE}, will only rebuild articles and reference pages
 if the source is newer than the destination.}
     \item{\code{override}}{An optional named list used to temporarily override

@@ -1,10 +1,19 @@
 #' Define user interface
 #' @import bslib
 #' @import bsicons
+#' @importFrom fs dir_tree
 #' @import shiny
-#' @importFrom htmltools includeHTML
+#' @importFrom htmltools includeHTML includeMarkdown tags
 
 ericmas_ui <- function() {
+
+  # addResourcePath(
+  #   prefix = 'www',
+  #   directoryPath = system.file('www', package = 'ericmas'))
+
+  fs::dir_tree(fs::path_package(package = "ericmas"))
+  cat(getwd())
+
   page_sidebar(
     title = "Ericmas Calculator v0.8",
     bg = "lightblue",
@@ -49,9 +58,17 @@ ericmas_ui <- function() {
                     ),
                   )
                 ),
-      nav_panel("About", htmltools::includeHTML(path = 'inst/www/about.html'))
-    ),
-  )
+      # nav_panel("About", htmltools::includeHTML(path = 'inst/www/about.html'))
+      nav_panel("About", uiOutput("about_text"))
+
+      #nav_panel("About", htmltools::includeMarkdown("inst/www/about.md"))
+
+      # nav_panel("About", shiny::tags$iframe(
+      #   src="./inst/www/about.html"
+      #   )
+      # )
+    )
+    )
 }
 
 
